@@ -1,8 +1,20 @@
-Around the U.S. project on React, featuring authorization and registration.
+Project 11: Around The U.S.
+Overview
 
-This repository will contain your own front-end project on React with added authorization and registration features.
-Start working with your previously built front end code from Sprint 11.
+This project emulates a responsive site for photo sharing and liking around the U.S.
+built using React by Yonatan Reed.
 
-All authorization, registration and token requests must go through to the server running on [https://register.nomoreparties.co](https://register.nomoreparties.co/).
+    Link to the project in Figma:
+    https://www.figma.com/file/SurN1jaeEQIhuZEDMhmWWf/Sprint-4%3A-Around-The-U.S.-%7C-desktop-%2B-mobile?node-id=0%3A1
 
-Good luck!
+Project features
+
+    ReactJS
+    Javascript ES6
+    Webpack, Postcss, Babel
+    Flat BEM file structure
+
+Github Pages Link:
+
+    Link to the github pages link:
+    https://yonatanreed.github.io/around-react/
