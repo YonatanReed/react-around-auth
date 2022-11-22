@@ -144,21 +144,14 @@ function App() {
   };
 
   function onRegister({ email, password }) {
-    console.log('app.js onRegistrer');
     auth
       .register(email, password)
       .then((res) => {
-        console.log('res.data');
-        console.log(res.data);
         if (res.data._id) {
-          console.log('successsuccess');
-
           setTooltipStatus('success');
           setIsInfoToolTipOpen(true);
           history.push('/signin');
         } else {
-          console.log('failfail');
-
           setTooltipStatus('fail');
           setIsInfoToolTipOpen(true);
         }
