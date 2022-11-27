@@ -3,13 +3,11 @@ import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-
-import ProtectedRoute from './ProtectedRoute'; // p14
-import Register from './Register'; // p14
-import Login from './Login'; // p14
+import ProtectedRoute from './ProtectedRoute';
+import Register from './Register';
+import Login from './Login';
 import * as auth from '../utils/auth';
 import InfoTooltip from './InfoTooltip';
-
 import EditProfilePopup from './EditProfilePopup';
 import AddPlacePopup from './AddPlacePopup';
 import EditAvatarPopup from './EditAvatarPopup';
@@ -24,17 +22,15 @@ function App() {
   const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
+  const [tooltipStatus, setTooltipStatus] = useState('');
+  const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [email, setEmail] = useState('');
+  const history = useHistory();
   const [selectedCard, setSelectedCard] = useState({
     name: '',
     link: '',
   });
-
-  const [tooltipStatus, setTooltipStatus] = useState(''); // p14
-  const [isInfoToolTipOpen, setIsInfoToolTipOpen] = useState(false);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // p14
-  const [email, setEmail] = useState('');
-  const history = useHistory();
 
   useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
@@ -45,7 +41,6 @@ function App() {
       .catch(console.log);
   }, []);
 
-  // p14 - check for jwt when mounting app
   useEffect(() => {
     const token = localStorage.getItem('jwt');
     if (token) {
